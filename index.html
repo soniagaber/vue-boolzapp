@@ -20,7 +20,12 @@
                 <div id="io"></div>
                 <div id="ricevi"></div>
                 <div id="cerca"></div>
-                <div id="contatti"></div>
+                <div id="contatti">
+                    <div class="contatto" v-for="contact in contacts" >
+                        <img :src="contact.avatar" alt="">
+                        <b>{{contact.name}}</b>
+                    </div>
+                </div>
             </div>
             <div id="app-container-sx">
                 <div id="conv-attiva"></div>
