@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,9 +19,24 @@
         <div id="sfondo-sotto"></div>
         <div id="app-container">
             <div id="app-container-dx">
-                <div id="io"></div>
-                <div id="ricevi"></div>
-                <div id="cerca"></div>
+                <div id="io">
+                    <div class="dx">
+                        <img src="img/avatar_io.jpg" alt="">
+                        <b>Sofia</b></div>
+                    <div class="sx">
+                        <i class="bi bi-arrow-clockwise"></i>
+                        <i class="bi bi-chat-square-fill"></i>
+                        <i class="bi bi-three-dots-vertical"></i></div>
+                </div>
+                <div id="ricevi">
+                    <div id="cont-bell"><i class="bi bi-bell-slash-fill"></i></div>
+                    <div><b>Ricevi notifiche di nuovi messaggi</b>
+                        <div id="attiva">Attiva notifiche desktop</div>
+                    </div>
+                </div>
+                <div id="cerca">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
                 <div id="contatti">
                     <div class="contatto" v-for="contact in contacts" >
                         <img :src="contact.avatar" alt="">
@@ -28,14 +45,34 @@
                 </div>
             </div>
             <div id="app-container-sx">
-                <div id="conv-attiva"></div>
-                <div id="conv"></div>
-                <div id="scrivi"></div>
+                <div id="conv-attiva">
+                    <div class="dx">Michele</div>
+                    <div class="sx">
+                        <i class="bi bi-search"></i>
+                        <i class="bi bi-paperclip"></i>
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </div>
+                </div>
+                <div id="conv">
+                    <div class="mess">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae dolore nobis minus, dolorem obcaecati fuga iusto similique ex accusamus assumenda ad? Eum excepturi consequuntur perferendis soluta nulla omnis libero tempore recusandae optio at voluptate aspernatur dolores exercitationem reiciendis cum minus expedita, aperiam, placeat nihil alias. Unde dolores quisquam, quae dicta omnis reprehenderit voluptas vel beatae nulla? Dolorum harum ipsam voluptas sed iste assumenda animi obcaecati, officia modi dolore quidem. Error!
+                        <div class="mess-orario">13:41</div>
+                    </div>
+                    <div class="mess inviato"> 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sint, enim cumque nemo dicta quos provident aspernatur corrupti expedita magni quam tempore illo vero assumenda quis fugit sapiente voluptates esse soluta, excepturi dolor mollitia. Velit natus et dolorum atque explicabo quae dolores nostrum aliquam cumque. Sequi possimus quis consectetur cum!<div class="mess-orario">13:54</div></div>
+                    <div class="mess">Lorem ipsum dolor sit amet con
+                            <div class="mess-orario">13:41</div>
+                        </div>
+                </div>
+                <div id="scrivi">
+                    <i class="bi bi-emoji-smile" style="margin-left: 35px;"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="bi bi-mic-fill" style="margin-right: 35px;"></i>
+                </div>
             </div>
         </div>
 
     </div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -48,10 +48,26 @@
     background-color: yellow;
 }
 
+#io img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+#io, #conv-attiva, #ricevi, #cerca, #scrivi{display: flex;
+    align-items: center;
+}
+
 #io, #conv-attiva{
     width: 100%;
     height: 60px;
     background-color: #EAEAEA;
+    justify-content: space-between;
+}
+
+#io i, #conv-attiva i{
+    margin-right: 10px;
 }
 
 #ricevi{
@@ -60,16 +76,46 @@
     height: 70px;
 }
 
+#cont-bell{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: #E9F7FD;
+    margin: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ricevi i{
+    color:#8DD9FC;
+}
+
+#attiva{
+    text-decoration: underline;
+    color: gray;
+    cursor: pointer;
+}
+
 #cerca{
     width: 100%;
     background-color: #F8F8F8;
     height: 50px;
 }
 
+#cerca input{
+    margin-left: 9px;
+    width: calc(100% - 18px);
+    border-radius: 3px;
+    border: 1px solid #E9EBEB;
+    padding-left: 15px;
+}
+
 #contatti{
     width: 100%;
     background-color: white;
     height: calc(100% - 180px);
+    overflow-y: auto;
 }
 
 #conv-attiva{
@@ -80,12 +126,50 @@
     width: 100%;
     height: calc(100% - 120px);
     background-image: url("../img/mine.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:13px;
+    padding: 40px 70px;
+    overflow-y: auto;
+}
+
+#conv .mess{
+background-color: white;
+border-radius: 7px;
+font-size: 0.9em;
+padding: 17px;
+max-width: 60%;
+min-width: 100px;
+position: relative;
+}
+
+#conv .mess.inviato{
+    align-self: flex-end;
+    background-color: #D5F9BA;
+}
+
+#conv .mess .mess-orario{
+ position: absolute;
+ bottom: 1px;
+ right: 6px;
+ font-size: 0.8em;
+ color:#B0B0B0 ;
 }
 
 #scrivi{
     width: 100%;
     height: 60px;
     background-color: #F3EEEA;
+}
+
+#scrivi input{
+    height: 42px;
+    border-radius: 5px;
+    border: 1px solid #E9EBEB;
+    padding-left: 15px;
+    width: calc(100% /6 *5);
+    margin: auto;
 }
 
 .contatto{
@@ -104,3 +188,7 @@
     margin-left: 15px;
     margin-right: 15px;
 }
+
+i{color: #B0B0B0;
+font-size: 1.5em;
+cursor: pointer;}
