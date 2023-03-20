@@ -185,21 +185,27 @@ createApp({
         },
 
         aggiungiMessaggio(){
+            let cont=0;
+            for(let i=0; i< this.messaggioUtente.length; i++){
+                if (this.messaggioUtente[i]!==" ")cont++
+            }
+            if(cont!==0){
                 const nuovoMessaggio = {
-                date: '10/01/2020 15:50:00',
-                message: this.messaggioUtente,
-                status:'sent',
-            };
-            this.contacts[this.indiceConvAttiva].messages.push(nuovoMessaggio);
-            this.messaggioUtente=" ";
-                const ripostaContatto ={
-                    date:'10/01/2020 15:50:00',
-                    message:'ok',
-                    status:'received',
-                }
-            setTimeout(()=>{
-                this.contacts[this.indiceConvAttiva].messages.push(ripostaContatto);
-         }, 1000);
+                    date: '10/01/2020 15:50:00',
+                    message: this.messaggioUtente,
+                    status:'sent',
+                };
+                this.contacts[this.indiceConvAttiva].messages.push(nuovoMessaggio);
+                this.messaggioUtente=" ";
+                    const ripostaContatto ={
+                        date:'10/01/2020 15:50:00',
+                        message:'ok',
+                        status:'received',
+                    }
+                setTimeout(()=>{
+                    this.contacts[this.indiceConvAttiva].messages.push(ripostaContatto);
+             }, 1000);
+            }
         },
 
         ricercaContatto(){
