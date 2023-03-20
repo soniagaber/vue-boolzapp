@@ -35,10 +35,10 @@
                     </div>
                 </div>
                 <div id="cerca">
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="ricercaUtente" @keyup="ricercaContatto()">
                 </div>
                 <div id="contatti">
-                    <div class="contatto" v-for="(contact, indice) in contacts" @click="cambiaIndiceConvAttiva(indice)" >
+                    <div class="contatto" v-for="(contact, indice) in contacts" v-show="contact.visible" @click="cambiaIndiceConvAttiva(indice)" >
                         <img :src="contact.avatar" alt="">
                         <b>{{contact.name}}</b>
                     </div>
@@ -64,7 +64,7 @@
                 </div>
                 <div id="scrivi">
                     <i class="bi bi-emoji-smile" style="margin-left: 35px;"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="messaggioUtente" @keyup.enter="aggiungiMessaggio()">
                     <i class="bi bi-mic-fill" style="margin-right: 35px;"></i>
                 </div>
             </div>
