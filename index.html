@@ -38,7 +38,7 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div id="contatti">
-                    <div class="contatto" v-for="contact in contacts" >
+                    <div class="contatto" v-for="(contact, indice) in contacts" @click="cambiaIndiceConvAttiva(indice)" >
                         <img :src="contact.avatar" alt="">
                         <b>{{contact.name}}</b>
                     </div>
@@ -46,7 +46,10 @@
             </div>
             <div id="app-container-sx">
                 <div id="conv-attiva">
-                    <div class="dx">Michele</div>
+                    <div class="dx">
+                        <img :src="contacts[indiceConvAttiva].avatar" alt="">
+                        <b>{{contacts[indiceConvAttiva].name}}</b>
+                    </div>
                     <div class="sx">
                         <i class="bi bi-search"></i>
                         <i class="bi bi-paperclip"></i>
@@ -54,14 +57,10 @@
                     </div>
                 </div>
                 <div id="conv">
-                    <div class="mess">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae dolore nobis minus, dolorem obcaecati fuga iusto similique ex accusamus assumenda ad? Eum excepturi consequuntur perferendis soluta nulla omnis libero tempore recusandae optio at voluptate aspernatur dolores exercitationem reiciendis cum minus expedita, aperiam, placeat nihil alias. Unde dolores quisquam, quae dicta omnis reprehenderit voluptas vel beatae nulla? Dolorum harum ipsam voluptas sed iste assumenda animi obcaecati, officia modi dolore quidem. Error!
-                        <div class="mess-orario">13:41</div>
+                    <div v-for="messaggio in contacts[indiceConvAttiva].messages" class="mess" :class="messaggio.status">
+                        {{messaggio.message}}
+                        <div class="mess-orario">{{messaggio.date}}</div>
                     </div>
-                    <div class="mess inviato"> 
-                        Lorem ipsum dolor sit Non sint, enim cumque nemo dicta quos provident aspernatur corrupti expedita magni quam tempore illo vero assumenda quis fugit sapiente voluptates esse soluta, excepturi dolor mollitia. Velit natus et dolorum atque explicabo quae dolores nostrum aliquam cumque. Sequi possimus quis consectetur cum!<div class="mess-orario">13:54</div></div>
-                    <div class="mess">Lorem ipsum dolor sit amet con
-                            <div class="mess-orario">13:41</div>
-                        </div>
                 </div>
                 <div id="scrivi">
                     <i class="bi bi-emoji-smile" style="margin-left: 35px;"></i>

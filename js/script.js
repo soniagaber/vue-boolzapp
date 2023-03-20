@@ -165,10 +165,17 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
 
+            indiceConvAttiva: 0,
 
+        }
+    },
 
+    methods: {
+
+        cambiaIndiceConvAttiva(indice){
+            this.indiceConvAttiva= indice;
         }
     }
 }).mount('#app')
