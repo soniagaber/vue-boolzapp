@@ -169,6 +169,12 @@ createApp({
 
             indiceConvAttiva: 0,
 
+            messaggioUtente: " ",
+
+            ricercaUtente: " ",
+
+            n: new Date()
+
         }
     },
 
@@ -176,6 +182,32 @@ createApp({
 
         cambiaIndiceConvAttiva(indice){
             this.indiceConvAttiva= indice;
+        },
+
+        aggiungiMessaggio(){
+                const nuovoMessaggio = {
+                date: '10/01/2020 15:50:00',
+                message: this.messaggioUtente,
+                status:'sent',
+            };
+            this.contacts[this.indiceConvAttiva].messages.push(nuovoMessaggio);
+            this.messaggioUtente=" ";
+                const ripostaContatto ={
+                    date:'10/01/2020 15:50:00',
+                    message:'ok',
+                    status:'received',
+                }
+            setTimeout(()=>{
+                this.contacts[this.indiceConvAttiva].messages.push(ripostaContatto);
+         }, 1000);
+        },
+
+        ricercaContatto(){
+            this.contacts.forEach(contact => {
+                if(contact.name.toLowerCase().includes(this.ricercaUtente.toLowerCase())){
+                    contact.visible= true
+                } else{contact.visible=false}
+            });
         }
     }
 }).mount('#app')

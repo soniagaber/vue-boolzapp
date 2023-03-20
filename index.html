@@ -59,7 +59,7 @@
                 <div id="conv">
                     <div v-for="messaggio in contacts[indiceConvAttiva].messages" class="mess" :class="messaggio.status">
                         {{messaggio.message}}
-                        <div class="mess-orario">{{messaggio.date}}</div>
+                        <div class="mess-orario">{{messaggio.date.slice(10, 16)}}</div>
                     </div>
                 </div>
                 <div id="scrivi">
